@@ -7,7 +7,7 @@ import org.robotframework.javalib.annotation.RobotKeywords;
 public class Setup {
 
     @RobotKeyword
-    public void setDriver() {
+    public void setSystemProperty() {
         System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\src\\test\\resources\\chromedriver.exe");
     }
 }
