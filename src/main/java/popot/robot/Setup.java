@@ -7,7 +7,7 @@ import org.robotframework.javalib.annotation.RobotKeywords;
 @RobotKeywords
 public class Setup {
 
-    @RobotKeyword
+    @RobotKeyword("Set System Property")
     @ArgumentNames({"driver", "path"})
     public void setSystemProperty(String driver, String path) {
         System.setProperty(driver, System.getProperty("user.dir") + path);
