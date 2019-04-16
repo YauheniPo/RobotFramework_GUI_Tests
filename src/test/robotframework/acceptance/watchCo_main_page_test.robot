@@ -1,28 +1,30 @@
 *** Settings ***
- Force Tags          WatchCoMain
- Documentation       WatchCo Main Page test
+ Force Tags             WatchCoMain
+ Documentation          WatchCo Main Page test
 
- Resource            resources.robot
+ Resource               resources.robot
+ Resource               locators.robot
 
 
- Suite Setup         Set System Property         key=${webdriver_chrome}   value=${webdriver_path}
- Suite Teardown      Close All Browsers
- Test Setup          Open Browser                url=${url}          browserName=${browser}
- Test Teardown       Close Browser
+ Suite Setup            Before Suite
+ Test Setup             Before Test
+ Test Teardown          Close Browser
+ Suite Teardown         Close All Browsers
 
 
 *** Test Cases ***
  Template of checking Main Bar Items
-    [Template]       Check Main Menu Bar Items are Clicable
-        item=SALE    locator=//*[text()='Sale ']
-        item=MEN     locator=//*[text()='Men']
-        item=WOMEN   locator=//*[text()='Women']
+    [Template]          Check Main Menu Bar Items are Clicable
+        item=SALE       locator=${menu_bar_sale_locator}
+        item=MEN        locator=${menu_bar_men_locator}
+        item=WOMEN      locator=${menu_bar_women_locator}
 
  Check Location
-    [tags]                 MainPage
-    [Documentation]        Checking Location is '${url}'
+    [tags]                          MainPage
+    [Documentation]                 Checking Location is '${url}'
 
-	Location Should Be     url=${url}
+    Maximize Browser Window
+	Location Should Be              url=${url}
 
 
 *** Keywords ***
@@ -30,4 +32,5 @@
     [Arguments]                     ${item}      ${locator}
     [Documentation]                 Checking Main Menu Item '${item}' - '${locator}' is clickable
 
+    Maximize Browser Window
     Element Should Be Clickable     ${locator}  ${item}
