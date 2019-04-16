@@ -43,14 +43,14 @@
                     <groupId>org.robotframework</groupId>
                     <artifactId>robotframework-maven-plugin</artifactId>
                     <version>1.5.1</version>
-                    <configuration>
-                        <logLevel>TRACE:INFO</logLevel>
-                        <variables>
-                            <variable>browser:${browser}</variable>
-                            <!-- Classpath is used in example tests to start H2 -->
-                            <variable>maven.test.classpath:${maven.test.classpath}</variable>
-                        </variables>
-                    </configuration>
+                    <!--<configuration>-->
+                        <!--<logLevel>TRACE:INFO</logLevel>-->
+                        <!--<variables>-->
+                            <!--<variable>browser:${browser}</variable>-->
+                            <!--&lt;!&ndash; Classpath is used in example tests to start H2 &ndash;&gt;-->
+                            <!--<variable>maven.test.classpath:${maven.test.classpath}</variable>-->
+                        <!--</variables>-->
+                    <!--</configuration>-->
                     <executions>
                         <execution>
                             <goals>

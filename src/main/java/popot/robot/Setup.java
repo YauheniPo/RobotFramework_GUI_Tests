@@ -8,8 +8,8 @@ import org.robotframework.javalib.annotation.RobotKeywords;
 public class Setup {
 
     @RobotKeyword("Set System Property")
-    @ArgumentNames({"driver", "path"})
-    public void setSystemProperty(String driver, String path) {
-        System.setProperty(driver, System.getProperty("user.dir") + path);
+    @ArgumentNames({"key", "value"})
+    public void setSystemProperty(String key, String value) {
+        System.setProperty(key, value);
     }
 }
