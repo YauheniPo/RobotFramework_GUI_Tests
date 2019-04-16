@@ -5,7 +5,6 @@ Documentation  A resource file containing the application specific keywords
 ...            the imported resource file.
 
 Library		Selenium2Library
-Library    BaseEntity
 
 #Resource            ../CommonResource.robot
 Force Tags          MainPage

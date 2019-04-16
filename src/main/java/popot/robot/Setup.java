@@ -12,4 +12,10 @@ public class Setup {
     public void setSystemProperty(String key, String value) {
         System.setProperty(key, value);
     }
+
+    @RobotKeyword("Get System Property")
+    @ArgumentNames({"key"})
+    public String getSystemProperty(String key) {
+        return System.getProperty(key);
+    }
 }
