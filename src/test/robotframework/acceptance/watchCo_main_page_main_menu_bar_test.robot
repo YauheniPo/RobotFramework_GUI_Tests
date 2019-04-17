@@ -1,5 +1,5 @@
 *** Settings ***
- Force Tags             WatchCoMain
+ Force Tags             MainPage
  Documentation          WatchCo Main Page test
 
  Resource               resources.robot
@@ -21,7 +21,7 @@
 
 *** Keywords ***
  Check Main Menu Bar Items are Visible
-    [Documentation]                 Checking Main Menu Item is Visible - '${locator}'
     [Arguments]                     ${locator}
+    [Documentation]                 Checking Main Menu Item is visible
 
     Element Should Be Visible       ${locator}

@@ -1,5 +1,8 @@
 *** Settings ***
-Documentation  Demo Test
+Documentation  A resource file containing the application specific keywords
+...
+...            This test has a workflow that is created using keywords in
+...            the imported resource file.
 
 Resource          Base.robot
 Library           String
@@ -61,7 +64,7 @@ Run-Keyword
 
 Run-Keyword-If
     ${TYPE}=    Set Variable    V1
-    Run Keyword If    '${TYPE}' == 'V1'    Log     Testing Variant 1
+    Run Keyword If    '${TYPE}' == 'V1'    Log    Testing Variant 1
     Run Keyword If    '${TYPE}' == 'V2'    Log    Testing Variant 2
     Run Keyword If    '${TYPE}' == 'V3'    Log    Testing Variant 3
 
