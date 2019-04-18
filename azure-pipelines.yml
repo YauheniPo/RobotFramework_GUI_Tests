@@ -1,0 +1,36 @@
+# Maven
+# Build your Java project and run tests with Apache Maven.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/java
+
+jobs:
+- job: Popot-Robot
+  pool:
+    vmImage: $(vmImageVar)
+#    vmImage: 'vs2017-win2016'
+#    vmImage: 'Ubuntu 16.04'
+#    vmImage: 'macOS-10.13'
+
+  steps:
+  - task: Maven@3
+    displayName: Maven Package
+    inputs:
+      mavenPomFile: 'pom.xml'
+      mavenOptions: '-Xmx3072m'
+      javaHomeOption: 'JDKVersion'
+      jdkVersionOption: '1.8'
+      jdkArchitectureOption: 'x64'
+      publishJUnitResults: false
+      goals: 'clean compile robotframework:run ${option}=$(value) -Dmaven.wagon.http.pool=false'
+
+  - script: ls
+    displayName: ls
+  - script: ls target/
+    displayName: ls 'target'
+
+  - task: PublishBuildArtifacts@1
+    displayName: Publish Build Artifacts
+    inputs:
+      PathtoPublish: '$(System.DefaultWorkingDirectory)'
+      name: 'drop'
+
