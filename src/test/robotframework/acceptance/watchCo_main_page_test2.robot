@@ -1,21 +1,22 @@
 *** Settings ***
- Force Tags          WatchCoMain
- Documentation       WatchCo Main Page test
+ Force Tags             WatchCoMain
+ Documentation          WatchCo Main Page test
 
- Resource            resources.robot
+ Resource               resources.robot
+ Resource               locators.robot
 
 
- Suite Setup         Set System Property         key=${webdriver_chrome}   value=${webdriver_path}
- Suite Teardown      Close All Browsers
- Test Setup          Open Browser                url=${url}          browserName=${browser}
- Test Teardown       Close Browser
- Test Template       Check Main Menu Bar Items are Visible
+ Suite Setup            Before Suite
+ Test Setup             Before Test
+ Test Template          Check Main Menu Bar Items are Visible
+ Test Teardown          Close Browser
+ Suite Teardown         Close All Browsers
 
 
 *** Test Cases ***
- SALE    locator=//*[text()='Sale ']
- MEN     locator=//*[text()='Men']
- WOMEN   locator=//*[text()='Women']
+ SALE                   locator=${menu_bar_sale_locator}
+ MEN                    locator=${menu_bar_men_locator}
+ WOMEN                  locator=${menu_bar_women_locator}
 
 
 *** Keywords ***
