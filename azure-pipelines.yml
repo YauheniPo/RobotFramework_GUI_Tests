@@ -21,7 +21,7 @@ jobs:
       jdkVersionOption: '1.8'
       jdkArchitectureOption: 'x64'
       publishJUnitResults: false
-      goals: 'clean compile robotframework:run ${option}=$(value) -Dmaven.wagon.http.pool=false'
+      goals: 'clean compile robotframework:run $(option)=$(value) -Dmaven.wagon.http.pool=false'
 
   - script: ls
     displayName: ls
