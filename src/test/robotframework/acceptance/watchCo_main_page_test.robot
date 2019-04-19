@@ -1,5 +1,5 @@
 *** Settings ***
- Force Tags             MainPage
+ Force Tags             WatchCoMain
  Documentation          WatchCo Main Page test
 
  Resource               resources.robot
@@ -13,30 +13,24 @@
 
 
 *** Test Cases ***
- Template of checking Brands Manu Items are clickable
-    [tags]                          MainPage    Smoke
-    [Documentation]                 Checking Brands Menu Items are clickable
-
-    [Template]                      Check Brands Menu Items are Clickable
-                                        item=Casio Watches
-                                        item=Citizen Watches
-                                        item=Diesel Watches
-                                        item=Fossil Watches
-                                        item=Luminox Watches
-                                        item=Seiko Watches
-                                        item=Skagen Watches
+ Template of checking Main Bar Items
+    [Template]          Check Main Menu Bar Items are Clicable
+        item=SALE       locator=${menu_bar_sale_locator}
+        item=MEN        locator=${menu_bar_men_locator}
+        item=WOMEN      locator=${menu_bar_women_locator}
 
  Check Location
-    [tags]                          MainPage    Smoke
-    [Documentation]                 Checking Location is ${url}
+    [tags]                          MainPage
+    [Documentation]                 Checking Location is '${url}'
 
+    Maximize Browser Window
 	Location Should Be              url=${url}
 
 
 *** Keywords ***
- Check Brands Menu Items are Clickable
-    [Arguments]                     ${item}
-    [Documentation]                 Checking Main Menu Item is clickable
+ Check Main Menu Bar Items are Clicable
+    [Arguments]                     ${item}      ${locator}
+    [Documentation]                 Checking Main Menu Item '${item}' - '${locator}' is clickable
 
-    ${locator} =                    Get Brand Menu Locator ${item}
-    Element Should Be Clickable     ${locator}     ${item}: locator - ${locator}
+    Maximize Browser Window
+    Element Should Be Clickable     ${locator}  ${item}
