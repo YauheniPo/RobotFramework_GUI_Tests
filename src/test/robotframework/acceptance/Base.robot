@@ -1,14 +1,31 @@
 *** Settings ***
-Documentation  Base Settings and Data
+ Documentation      Base Settings and Data
 
-Library		Selenium2Library
-Library		OperatingSystem
-#Library     org.robotframework.javalib.library.ClassPathLibrary      popot/robot/**.class
-Library     org.robotframework.javalib.library.AnnotationLibrary     popot/robot/**.class
+ Suite Setup        Run Keywords
+ ...                Login To System    AND
+ ...                Add User           AND
+ ...                Activate Alarms    AND
+ ...                Check Balance
+
+ Library		       Selenium2Library
+ Library		       OperatingSystem
+ Library            org.robotframework.javalib.library.ClassPathLibrary      popot/robot/**.class
+ Library            org.robotframework.javalib.library.AnnotationLibrary     popot/robot/**.class
+
 
 *** Variables ***
-${driver} =      webdriver.chrome.driver
-${chromedriver} =        chromedriver.exe
-${path} =        ${CURDIR}${/}..${/}..${/}resources${/}${chromedriver}
-${browser} =     chrome
-${url} =         https://www.google.com
+ ${driver} =              webdriver.chrome.driver
+ ${chromedriver} =        chromedriver.exe
+ ${path} =                ${CURDIR}${/}..${/}..${/}resources${/}${chromedriver}
+ ${browser} =             chrome
+ ${url} =                 https://www.google.com
+
+
+*** Keywords ***
+ Valid Login
+    Open Browser To Login Page
+    Input Username demo
+    Input Password mode
+    Submit Credentials
+    Welcome Page Should Be Open
+    [Teardown]  Close Browser
