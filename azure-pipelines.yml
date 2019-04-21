@@ -37,7 +37,7 @@ jobs:
     # Publish Test Results
     # Publish Test Results to Azure Pipelines/TFS
   - task: PublishTestResults@2
-    displayName: ublish Test Results
+    displayName: Publish Test Results
     inputs:
       testResultsFormat: 'JUnit' # Options: JUnit, NUnit, VSTest, xUnit, cTest
       testResultsFiles: '**/TEST-*.xml'
