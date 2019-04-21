@@ -8,9 +8,7 @@
 
 
 *** Variables ***
- ${webdriver_chrome} =          webdriver.chrome.driver
- ${chromedriver} =              chromedriver.exe
- ${webdriver_path} =            ${CURDIR}${/}..${/}..${/}resources${/}${chromedriver}
+ ${resources_path} =            ${CURDIR}${/}..${/}..${/}resources${/}
  ${browser} =                   chrome
  ${url} =                       https://www.watchco.com/
  ${implicit_wait} =             20
@@ -18,9 +16,9 @@
 
 *** Keywords ***
  Before Suite
-    [Documentation]             Set path to webdriver: '${webdriver_chrome}' - '${webdriver_path}'
+    [Documentation]             Set path to webdriver for '${browser}' browser
 
-    Set System Property         key=${webdriver_chrome}     value=${webdriver_path}
+    Set WebDriver Path          browser=${browser}
 
  Before Test
     [Documentation]             Open Browser '${browser}' for '${url}'

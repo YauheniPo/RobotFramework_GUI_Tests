@@ -30,7 +30,7 @@
      [tags]                         MainPage    Smoke
      [Documentation]                Checking Main Bar Items are clickable
 
-     [Template]                     Check Main Menu Bar Items are Clickable
+     [Template]                     Element Should Be Clickable
                                         locator=${menu_bar_sale_locator}
                                         locator=${menu_bar_men_locator}
                                         locator=${menu_bar_women_locator}
@@ -49,9 +49,3 @@
 
     ${locator} =                    Get Brand Menu Locator ${item}
     Element Should Be Clickable     ${locator}     ${item}: locator - ${locator}
-
- Check Main Menu Bar Items are Clickable
-    [Documentation]                 Checking Main Bar Item is clickable
-    [Arguments]                     ${locator}
-
-    Element Should Be Visible       ${locator}

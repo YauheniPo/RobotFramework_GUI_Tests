@@ -71,3 +71,22 @@ Run-Keyword-Ignore-Error
     @{CAPTAINS}    Create List    Picard    Kirk    Archer
     Run Keyword And Ignore Error    Should Be Empty    ${CAPTAINS}
     Log    Reached this point despite of error
+
+
+ Stackoverflow
+     ${options}=  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys, selenium.webdriver
+     Call Method    ${options}    add_argument      always-authorize-plugins
+     Call Method    ${options}    add_argument      enable-npapi
+     Create WebDriver  Chrome    chrome_options=${options}
+     Go To    https://www.java.com/verify
+     Close All Browsers
+
+ Get WebDriver Path
+    [Documentation]
+
+    ${os} =                     Get System Property         key=os.name
+    ${is_windows}               Is Contain String Ignore Case    value${os}   string=Windows
+    ${webdriver_path} =         Run Keyword If      True==${is_windows}
+    ...                                             Set Variable    ${webdriver_path}${chromedriver_win}
+    ...                         ELSE                Set Variable    ${webdriver_path}${chromedriver_unix}
+    [RETURN]                    ${webdriver_path}
