@@ -26,6 +26,15 @@
                                         item=Seiko Watches
                                         item=Skagen Watches
 
+ Template of checking Main Bar Items are clickable
+     [tags]                         MainPage    Smoke
+     [Documentation]                Checking Main Bar Items are clickable
+
+     [Template]                     Check Main Menu Bar Items are Clickable
+                                        locator=${menu_bar_sale_locator}
+                                        locator=${menu_bar_men_locator}
+                                        locator=${menu_bar_women_locator}
+
  Check Location
     [tags]                          MainPage    Smoke
     [Documentation]                 Checking Location is ${url}
@@ -35,8 +44,14 @@
 
 *** Keywords ***
  Check Brands Menu Items are Clickable
+    [Documentation]                 Checking Barnd Menu Item is clickable
     [Arguments]                     ${item}
-    [Documentation]                 Checking Main Menu Item is clickable
 
     ${locator} =                    Get Brand Menu Locator ${item}
     Element Should Be Clickable     ${locator}     ${item}: locator - ${locator}
+
+ Check Main Menu Bar Items are Clickable
+    [Documentation]                 Checking Main Bar Item is clickable
+    [Arguments]                     ${locator}
+
+    Element Should Be Visible       ${locator}

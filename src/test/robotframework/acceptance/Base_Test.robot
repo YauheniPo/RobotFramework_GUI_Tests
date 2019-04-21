@@ -1,14 +1,13 @@
 *** Settings ***
-Documentation  A resource file containing the application specific keywords
+Documentation     A resource file containing the application specific keywords
 ...
-...            This test has a workflow that is created using keywords in
-...            the imported resource file.
-
+...               This test has a workflow that is created using keywords in
+...               the imported resource file.
+Force Tags        Base
 Resource          Base.robot
 Library           String
 Library           Collections
 
-Force Tags          tagg
 
 *** Test Cases ***
 Check google
