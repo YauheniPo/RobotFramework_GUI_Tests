@@ -13,7 +13,7 @@ jobs:
 
   steps:
   - task: Maven@3
-    displayName: Maven Package
+    displayName: Maven Package for ${vmImageVar}
     inputs:
       mavenPomFile: 'pom.xml'
       mavenOptions: '-Xmx3072m'
