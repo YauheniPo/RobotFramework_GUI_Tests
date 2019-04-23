@@ -6,6 +6,8 @@ import org.robotframework.javalib.annotation.ArgumentNames;
 import org.robotframework.javalib.annotation.RobotKeyword;
 import org.robotframework.javalib.annotation.RobotKeywords;
 
+import java.io.File;
+
 @Log4j2
 @RobotKeywords
 public class CustomRobotKeywords {
@@ -38,7 +40,12 @@ public class CustomRobotKeywords {
     @ArgumentNames({"browser"})
     public void setWebDriverPath(String browser) {
         log.info(String.format("Set WebDriver Path for '%s' browser", browser));
-        setSystemProperty(String.format(WEB_DRIVER_KEY, browser), getDriverPath());
+        String driverPath = getDriverPath();
+        if (new File(driverPath).exists()) {
+            setSystemProperty(String.format(WEB_DRIVER_KEY, browser), driverPath);
+        } else {
+            log.fatal(String.format("Driver by path '%s' does not exist", driverPath));
+        }
     }
 
     private String getDriverPath() {

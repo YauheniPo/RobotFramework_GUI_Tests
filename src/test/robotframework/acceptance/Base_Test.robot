@@ -89,4 +89,4 @@ Run-Keyword-Ignore-Error
     ${webdriver_path} =         Run Keyword If      True==${is_windows}
     ...                                             Set Variable    ${webdriver_path}${chromedriver_win}
     ...                         ELSE                Set Variable    ${webdriver_path}${chromedriver_unix}
-    [RETURN]                    ${webdriver_path}
+    [Return]                    ${webdriver_path}
