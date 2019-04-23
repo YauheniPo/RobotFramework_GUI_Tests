@@ -13,7 +13,7 @@ jobs:
 
   steps:
   - task: Maven@3
-    displayName: Maven Package for ${vmImageVar}
+    displayName: Maven Package
     inputs:
       mavenPomFile: 'pom.xml'
       mavenOptions: '-Xmx3072m'
@@ -24,7 +24,7 @@ jobs:
       goals: 'clean compile robotframework:run $(option)=$(value) -Dmaven.wagon.http.pool=false'
 
   - script: ls
-    displayName: ls
+    displayName: ls for $(vmImageVar)
   - script: ls target/
     displayName: ls 'target'
 
