@@ -19,6 +19,7 @@
  ${path} =                ${CURDIR}${/}..${/}..${/}resources${/}${chromedriver}
  ${browser} =             chrome
  ${url} =                 https://www.google.com
+ ${resources_path} =      ${CURDIR}${/}..${/}..${/}resources${/}
 
 
 *** Keywords ***
