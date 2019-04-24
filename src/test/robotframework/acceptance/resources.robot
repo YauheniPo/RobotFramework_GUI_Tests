@@ -16,9 +16,9 @@
 
 *** Keywords ***
  Before Suite
-    [Documentation]             Set path to webdriver for '${browser}' browser
+    [Documentation]             WebDriver Manager Setup for '${browser}' browser
 
-    Set WebDriver Path          browser=${browser}
+    WebDriver Manager Setup     browser=${browser}
 
  Before Test
     [Documentation]             Open Browser '${browser}' for '${url}'

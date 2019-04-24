@@ -8,3 +8,10 @@ mvn clean compile robotframework:run -Dexcludes=Base
 mvn clean compile robotframework:run -Dsuites=acceptance.Test_Case_1
 mvn clean compile robotframework:run -Dvariables=browser:ie -Dsuites=acceptance.Test_Case_1         - ${browser} =      chrome
 
+
+https://robotframework.org/#libraries
+http://robotframework.org/MavenPlugin/run-mojo.html#variables
+http://robotframework.org/robotframework/#built-in-tools
+http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html
+https://github.com/MarkusBernhardt/robotframework-selenium2library-java#readme
+

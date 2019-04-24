@@ -6,16 +6,9 @@ import org.robotframework.javalib.annotation.ArgumentNames;
 import org.robotframework.javalib.annotation.RobotKeyword;
 import org.robotframework.javalib.annotation.RobotKeywords;
 
-import java.io.File;
-
 @Log4j2
 @RobotKeywords
 public class CustomRobotKeywords {
-
-    private static final ResourcePropertiesManager TEST_CONFIG_PROPERTIES_MANAGER = new ResourcePropertiesManager("testConfig.properties");
-    private static final String DRIVER_PATH = TEST_CONFIG_PROPERTIES_MANAGER.getProperty("driver_folder");
-    private static final String WEB_DRIVER_KEY = "webdriver.%s.driver";
-    private static final String CHROME_DRIVER = "chromedriver";
 
     @RobotKeyword("Set System Property")
     @ArgumentNames({"key", "value"})
@@ -36,25 +29,15 @@ public class CustomRobotKeywords {
         return StringUtils.containsIgnoreCase(value, string);
     }
 
-    @RobotKeyword("Set WebDriver Path")
+    @RobotKeyword("WebDriver Manager Setup")
     @ArgumentNames({"browser"})
-    public void setWebDriverPath(String browser) {
+    public void webDriverManagerSetup(String browser) {
         log.info(String.format("Set WebDriver Path for '%s' browser", browser));
-        String driverPath = getDriverPath();
-        if (new File(driverPath).exists()) {
-            setSystemProperty(String.format(WEB_DRIVER_KEY, browser), driverPath);
-        } else {
-            log.fatal(String.format("Driver by path '%s' does not exist", driverPath));
-        }
-    }
-
-    private String getDriverPath() {
-        return DRIVER_PATH + (OSValidator.isWindows() ? CHROME_DRIVER + ".exe" : CHROME_DRIVER);
+        Browser.getInstance(browser);
     }
 
     public static void main(String[] args) {
         CustomRobotKeywords customRobotKeywords = new CustomRobotKeywords();
-        customRobotKeywords.setWebDriverPath("chrome");
     }
 }
 
