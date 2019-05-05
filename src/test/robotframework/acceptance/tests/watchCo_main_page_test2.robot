@@ -1,9 +1,8 @@
 *** Settings ***
- Force Tags             MainPage
  Documentation          WatchCo Main Page test
 
- Resource               resources.robot
- Resource               locators.robot
+ Resource               ..${/}framework${/}resources.robot
+ Resource               ..${/}pages${/}locators.robot
 
 
  Suite Setup            Before Suite

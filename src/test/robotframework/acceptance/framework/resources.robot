@@ -8,7 +8,7 @@
 
 
 *** Variables ***
- ${browser} =                   googlechromeheadless
+ ${browser} =                   googlechrome
  ${url} =                       https://www.watchco.com/
  ${implicit_wait} =             20
  ${timeout} =                   60

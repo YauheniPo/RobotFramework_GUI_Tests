@@ -10,6 +10,7 @@
  ${brand_manu_item_locator} =       //ul[@class='menu side-menu']//*[text()='%s']
  ${brand_sorter_limiter} =          //*[@class='sorter']//*[@class='limiter']//select
  ${brand_sorter_items} =            //*[contains(@class, 'products')]//li[contains(@class, 'item')]
+ ${brand_title} =                   //*[@class='main container']//h1
 
 
 *** Keywords ***
