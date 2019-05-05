@@ -1,20 +1,22 @@
 *** Settings ***
+
  Documentation                  Resources
 
  Library		                SeleniumLibrary
  Library		                String
-
  Library                        org.robotframework.javalib.library.AnnotationLibrary     popot/robot/**.class
 
 
 *** Variables ***
- ${browser} =                   googlechrome
+
+ ${browser} =                   googlechromeheadless
  ${url} =                       https://www.watchco.com/
  ${implicit_wait} =             20
  ${timeout} =                   60
 
 
 *** Keywords ***
+
  Before Suite
     [Documentation]             WebDriver Manager Setup for '${browser}' browser
 

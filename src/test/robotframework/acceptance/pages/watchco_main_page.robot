@@ -1,4 +1,5 @@
 *** Settings ***
+
  Documentation          WatchCo Main Page
 
  Resource               locators.robot
@@ -9,6 +10,7 @@
 
 
 *** Keywords ***
+
  Click to Brand Menu Item
     [Documentation]                     Click to Brand Menu Item
     [Arguments]                         ${brand}
