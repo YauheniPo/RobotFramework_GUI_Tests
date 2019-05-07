@@ -11,7 +11,7 @@ Library           Collections
 
 *** Test Cases ***
 Check google
-    Log     ${path}
+    [Setup]  Log     ${path}
 	Set Suite Variable     ${webdriver.chrome.driver}    ${path}
 	Log     ${webdriver.chrome.driver}
     Set System Property     key=${driver}   value=${path}
@@ -26,7 +26,7 @@ Check google
     Set Test Variable   ${sys_target}
     Log     ${sys_target}
 
-    Click Button    locator=//div[not(@jsname)]/center/*[@name='btnK']
+        Click Button    locator=//div[not(@jsname)]/center/*[@name='btnK']
 #    Sleep   2
 	[Teardown]  Close Browser
 
