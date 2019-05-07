@@ -2,7 +2,7 @@
 
  Force Tags             Test
 
- Documentation          WatchCo Main Page tests
+ Documentation          WatchCo tests
 
  Resource               ../framework/resources.robot
  Resource               ../pages/watchco_main_page.robot
@@ -39,7 +39,7 @@
     Should Be Equal as Numbers                        first=${count}                            second=${actual_count}
     ...                                               msg=Expected Result: ${count}; Actual Result: ${actual_count}
 
-Check Add to Cart Button is exist
+ Check Add to Cart Button is exist
     [tags]                                            Brand     Smoke
     [Documentation]                                   Check Add to Cart Button is exist
 
@@ -47,3 +47,17 @@ Check Add to Cart Button is exist
     watchco_brand_page.Click To First Brand Item
     Element Should Be Visible                         locator=${loc_product_add_to_cart_btn}
     ...                                               message=Button 'Add to Cart' does not vasible
+
+ Check Product Item was added to Cart Icon
+    [tags]                                            Brand     Smoke
+    [Documentation]                                   Check Product Item was added to Cart Icon
+
+    watchco_main_page.Click to Main Menu Bar Item     ${loc_menu_bar_men}                       ${menu_bar_mens_casio}
+    watchco_brand_page.Click to First Brand Item
+    ${product_label} =                                watchco_product_page.Get Product Label
+    watchco_product_page.Click 'Add to Cart' Button
+    watchco_checkout_page.Click 'Continue Shopping' Button
+    header.Hover to Cart Icon
+    ${cart_product_label} =                           header.Get Product Label
+    Should Be Equal                                   first=${product_label}                    second=${cart_product_label}
+    ...                                               msg=Product Label: ${product_label}; is unequal with Product Label from Cart Icon: ${cart_product_label}

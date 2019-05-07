@@ -14,8 +14,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <browser>chrome</browser>
-        <maven.test.classpath>robot.popot</maven.test.classpath>
+        <!--<browser>chrome</browser>-->
+        <!--<maven.test.classpath>robot.popot</maven.test.classpath>-->
     </properties>
 
     <dependencies>
@@ -23,7 +23,7 @@
             <groupId>com.github.hi-fi</groupId>
             <artifactId>robotframework-seleniumlibrary</artifactId>
             <version>3.141.59.2</version>
-            <scope>test</scope>
+            <!--<scope>test</scope>-->
         </dependency>
         <!--<dependency>-->
             <!--<groupId>com.github.markusbernhardt</groupId>-->
