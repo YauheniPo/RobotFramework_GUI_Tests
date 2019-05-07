@@ -7,6 +7,8 @@
  Resource               ../framework/resources.robot
  Resource               ../pages/watchco_main_page.robot
  Resource               ../pages/watchco_brand_page.robot
+ Resource               ../pages/watchco_product_page.robot
+ Resource               ../pages/watchco_checkout_page.robot
  Resource               ../constants.robot
 
 
@@ -22,17 +24,26 @@
     [tags]                                            Brand     Smoke
     [Documentation]                                   Click to Main Menu Bar Item and Check Title
 
-    watchco_main_page.Click to Main Menu Bar Item     ${menu_bar_men_locator}       ${menu_bar_mens_casio}
+    watchco_main_page.Click to Main Menu Bar Item     ${loc_menu_bar_men}                       ${menu_bar_mens_casio}
     ${title} =                                        watchco_brand_page.Get Title
-    Should Be Equal                                   ${title}                      ${brand_casio_mens_watches_title}
+    Should Be Equal                                   ${title}                                  ${brand_casio_mens_watches_title}
 
  Check Brand Products Show Limiter
     [tags]                                            Brand     Smoke
     [Documentation]                                   Checking Brand Products Show Limiter
 
-    ${count} =                                        Set Variable                  24
-    watchco_main_page.Click to Main Menu Bar Item     ${menu_bar_men_locator}       ${menu_bar_mens_casio}
+    ${count} =                                        Set Variable                              24
+    watchco_main_page.Click to Main Menu Bar Item     ${loc_menu_bar_men}                       ${menu_bar_mens_casio}
     watchco_brand_page.Select products Limit          limit=${count}
     ${actual_count} =                                 watchco_brand_page.Get Product Count
-    Should Be Equal as Numbers                        first=${count}                second=${actual_count}
+    Should Be Equal as Numbers                        first=${count}                            second=${actual_count}
     ...                                               msg=Expected Result: ${count}; Actual Result: ${actual_count}
+
+Check Add to Cart Button is exist
+    [tags]                                            Brand     Smoke
+    [Documentation]                                   Check Add to Cart Button is exist
+
+    watchco_main_page.Click to Main Menu Bar Item     ${loc_menu_bar_men}                       ${menu_bar_mens_casio}
+    watchco_brand_page.Click To First Brand Item
+    Element Should Be Visible                         locator=${loc_product_add_to_cart_btn}
+    ...                                               message=Button 'Add to Cart' does not vasible

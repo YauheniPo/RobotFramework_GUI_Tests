@@ -2,8 +2,8 @@
 
  Documentation                  Resources
 
- Library		                SeleniumLibrary
- Library		                String
+ Library                        SeleniumLibrary
+ Library                        String
  Library                        org.robotframework.javalib.library.AnnotationLibrary     popot/robot/**.class
 
 
