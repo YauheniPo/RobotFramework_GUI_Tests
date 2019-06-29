@@ -50,19 +50,19 @@ public class CustomRobotElementKeywords {
     @RobotKeyword("Click to First Item from List Items by Locator.")
     @ArgumentNames({"locator", "childLocator=NONE", "message=NONE"})
     public void clickToFirstItem(String locator, String... params) {
-        String child = robot.getParamsValue(params, 0, "");
+        String childLocator = robot.getParamsValue(params, 0, "");
         String message = robot.getParamsValue(params, 1, "");
         List<WebElement> elements = getCurrentBrowser().findElements(By.xpath(locator));
-        if (elements.size() == 0) {
-            if (message == null || message.equals("")) {
+        if (elements.isEmpty()) {
+            if (message.isEmpty()) {
                 message = String.format("The Element was not found by locator '%s' and child locator '%s'.",
-                        locator, child);
+                        locator, childLocator);
             }
             throw new SeleniumLibraryNonFatalException(message);
         }
         WebElement element = elements.get(0);
-        if (!child.isEmpty()) {
-            element.findElements(By.xpath(child)).get(0).click();
+        if (!childLocator.isEmpty()) {
+            element.findElements(By.xpath(childLocator)).get(0).click();
         } else {
             element.click();
         }
