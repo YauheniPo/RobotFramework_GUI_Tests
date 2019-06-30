@@ -1,14 +1,15 @@
-package popot.robot;
+package popot.robot.keyword;
 
 import lombok.extern.log4j.Log4j2;
 import org.apache.commons.lang3.StringUtils;
 import org.robotframework.javalib.annotation.ArgumentNames;
 import org.robotframework.javalib.annotation.RobotKeyword;
 import org.robotframework.javalib.annotation.RobotKeywords;
+import popot.robot.browser.Browser;
 
 @Log4j2
 @RobotKeywords
-public class CustomRobotKeywords {
+public class RobotString {
 
     @RobotKeyword("Set System Property")
     @ArgumentNames({"key", "value"})
@@ -34,10 +35,6 @@ public class CustomRobotKeywords {
     public void webDriverManagerSetup(String browser) {
         log.info(String.format("Set WebDriver Path for '%s' browser", browser));
         Browser.getInstance(browser);
-    }
-
-    public static void main(String[] args) {
-        CustomRobotKeywords customRobotKeywords = new CustomRobotKeywords();
     }
 }
 

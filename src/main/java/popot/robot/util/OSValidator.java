@@ -1,4 +1,4 @@
-package popot.robot;
+package popot.robot.util;
 
 import java.util.Locale;
 

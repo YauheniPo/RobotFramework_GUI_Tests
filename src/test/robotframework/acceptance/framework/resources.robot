@@ -4,7 +4,7 @@
 
  Library                        SeleniumLibrary
  Library                        String
- Library                        org.robotframework.javalib.library.AnnotationLibrary     popot/robot/**.class
+ Library                        org.robotframework.javalib.library.AnnotationLibrary     popot/robot/keyword/**.class
 
 
 *** Variables ***

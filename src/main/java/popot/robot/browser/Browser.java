@@ -1,4 +1,4 @@
-package popot.robot;
+package popot.robot.browser;
 
 import io.github.bonigarcia.wdm.DriverManagerType;
 import io.github.bonigarcia.wdm.WebDriverManager;
