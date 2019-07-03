@@ -5,7 +5,6 @@ import com.github.markusbernhardt.seleniumlibrary.keywords.BrowserManagement;
 import com.github.markusbernhardt.seleniumlibrary.keywords.Robot;
 import lombok.Getter;
 import lombok.extern.log4j.Log4j2;
-import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.openqa.selenium.WebDriver;
 
 import javax.script.ScriptEngine;
@@ -23,12 +22,13 @@ public class CustomRobotElement {
     public CustomRobotElement() throws NoSuchFieldException, IllegalAccessException {
         try {
             CustomRobotElement.s = getLibraryInstance();
-        } catch (javax.script.ScriptException e) {
-            log.fatal(ExceptionUtils.getStackTrace(e));
+        } catch (ScriptException e) {
+            log.fatal("Cannot create SeleniumLibrary instance.", e);
         }
         Field bmField = SeleniumLibrary.class.getDeclaredField("bm");
         bmField.setAccessible(true);
         b = (BrowserManagement) bmField.get(s);
+        bmField.setAccessible(false);
     }
 
     private static SeleniumLibrary getLibraryInstance() throws ScriptException {
@@ -39,7 +39,7 @@ public class CustomRobotElement {
         return (SeleniumLibrary) engine.get("instance");
     }
 
-    static WebDriver getCurrentBrowser() {
+    protected WebDriver getCurrentBrowser() {
         return b.getCurrentWebDriver();
     }
 }
