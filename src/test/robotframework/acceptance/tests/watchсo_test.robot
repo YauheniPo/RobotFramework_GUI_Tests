@@ -44,7 +44,7 @@
     [Documentation]                                   Check Add to Cart Button is exist
 
     watchco_main_page.Click to Main Menu Bar Item     ${loc_menu_bar_men}                       ${menu_bar_mens_casio}
-    watchco_brand_page.Click To First Brand Item
+    watchco_brand_page.Click Brand Item               index=0
     Element Should Be Visible                         locator=${loc_product_add_to_cart_btn}
     ...                                               message=Button 'Add to Cart' does not vasible
 
@@ -53,7 +53,7 @@
     [Documentation]                                   Check Product Item was added to Cart Icon
 
     watchco_main_page.Click to Main Menu Bar Item     ${loc_menu_bar_men}                       ${menu_bar_mens_casio}
-    watchco_brand_page.Click to First Brand Item
+    watchco_brand_page.Click Brand Item               index=0
     ${product_label} =                                watchco_product_page.Get Product Label
     watchco_product_page.Click 'Add to Cart' Button
     watchco_checkout_page.Click 'Continue Shopping' Button

@@ -15,24 +15,19 @@ public class Element extends CustomRobotElement {
     public Element() throws NoSuchFieldException, IllegalAccessException {
     }
 
-    @RobotKeyword("Click to First Item from List Items by Locator.")
-    @ArgumentNames({"locator", "childLocator=NONE", "message=NONE"})
-    public void clickToFirstItem(String locator, String... params) {
-        String childLocator = getRobot().getParamsValue(params, 0, "");
-        String message = getRobot().getParamsValue(params, 1, "");
+    @RobotKeyword("Click To Element from List Elements by Locator.")
+    @ArgumentNames({"locator", "index=0", "message=NONE"})
+    public void clickToElement(String locator, String... params) {
+        String message = getRobot().getParamsValue(params, 0, "");
+        int index = getRobot().getParamsValue(params, 1, 0);
         List<WebElement> elements = getCurrentBrowser().findElements(By.xpath(locator));
         if (elements.isEmpty()) {
             if (message.isEmpty()) {
-                message = String.format("The Element was not found by locator '%s' and child locator '%s'.",
-                        locator, childLocator);
+                message = String.format("The Element was not found by locator '%s' with index '%d'", locator, index);
             }
             throw new SeleniumLibraryNonFatalException(message);
         }
-        WebElement element = elements.get(0);
-        if (!childLocator.isEmpty()) {
-            element.findElements(By.xpath(childLocator)).get(0).click();
-        } else {
-            element.click();
-        }
+        WebElement element = elements.get(index);
+        element.click();
     }
 }
