@@ -21,12 +21,15 @@
  ${url} =                 https://www.google.com
  ${resources_path} =      ${CURDIR}${/}..${/}..${/}resources${/}
 
+ @{list} =                item1  item2  item3
+ #&{dict} =                k=v       &{dict}[k]
 
 *** Keywords ***
  Valid Login
-    Open Browser To Login Page
+    Open Browser To Login Page      @{list}[0]
     Input Username demo
     Input Password mode
     Submit Credentials
     Welcome Page Should Be Open
+    Log                             %{os}   %{username}
     [Teardown]  Close Browser

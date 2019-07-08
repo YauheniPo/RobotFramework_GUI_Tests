@@ -8,10 +8,13 @@ Resource          Base.robot
 Library           String
 Library           Collections
 
+ Default Tags       tag
+
 
 *** Test Cases ***
 Check google
     [Setup]  Log     ${path}
+    [Tags]   smoke
 	Set Suite Variable     ${webdriver.chrome.driver}    ${path}
 	Log     ${webdriver.chrome.driver}
     Set System Property     key=${driver}   value=${path}
@@ -26,7 +29,9 @@ Check google
     Set Test Variable   ${sys_target}
     Log     ${sys_target}
 
-        Click Button    locator=//div[not(@jsname)]/center/*[@name='btnK']
+    Set Tags     tag2
+    Remove Tags     tag2
+    Click Button    locator=//div[not(@jsname)]/center/*[@name='btnK']
 #    Sleep   2
 	[Teardown]  Close Browser
 
