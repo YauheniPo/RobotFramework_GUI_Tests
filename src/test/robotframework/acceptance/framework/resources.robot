@@ -20,7 +20,7 @@
  Before Suite
     [Documentation]             WebDriver Manager Setup for '${browser}' browser
 
-    WebDriver Manager Setup     browser=${browser}
+    WebDriver Manager Setup     browserName=${browser}
 
  Before Test
     [Documentation]             Open Browser '${browser}' for '${url}'

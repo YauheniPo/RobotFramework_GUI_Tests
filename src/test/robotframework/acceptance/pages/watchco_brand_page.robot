@@ -39,5 +39,5 @@
     [Documentation]                     Click Brand Item
     [Arguments]                         ${index}
 
-    Click To Element                    locator=${loc_brand_products_panel}//li     index=${index}
+    Click Element By Index              xpath=${loc_brand_products_panel}//li       index=${index}
 
