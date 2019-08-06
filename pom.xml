@@ -22,7 +22,7 @@
         <dependency>
             <groupId>com.github.hi-fi</groupId>
             <artifactId>robotframework-seleniumlibrary</artifactId>
-            <version>3.141.59.2</version>
+            <version>3.141.59.265</version>
             <scope>test</scope>
         </dependency>
         <!--<dependency>-->
@@ -55,6 +55,12 @@
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-core</artifactId>
             <version>2.11.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.hi-fi</groupId>
+            <artifactId>robotframework-seleniumlibrary</artifactId>
+            <version>3.141.59.265</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 
