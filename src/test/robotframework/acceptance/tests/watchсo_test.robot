@@ -32,7 +32,7 @@
     [tags]                                            Brand     Smoke
     [Documentation]                                   Checking Brand Products Show Limiter
 
-    ${count} =                                        Set Variable                              24
+    ${count} =                                        Set Variable                              12
     watchco_main_page.Click to Main Menu Bar Item     ${loc_menu_bar_men}                       ${menu_bar_mens_casio}
     watchco_brand_page.Select products Limit          limit=${count}
     ${actual_count} =                                 watchco_brand_page.Get Product Count
