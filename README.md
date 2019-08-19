@@ -1,3 +1,5 @@
+[![Build Status](https://dev.azure.com/YauheniPo/WebTestFramework/_apis/build/status/YauheniPo.RobotFramework_GUI_Tests?branchName=master)](https://dev.azure.com/YauheniPo/WebTestFramework/_build/latest?definitionId=6&branchName=master)
+
 # RobotFramework_GUI_Tests
 
 mvn clean compile robotframework:run
