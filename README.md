@@ -1,4 +1,4 @@
-[![Build Status](https://dev.azure.com/YauheniPo/WebTestFramework/_apis/build/status/YauheniPo.RobotFramework_GUI_Tests?branchName=master)](https://dev.azure.com/YauheniPo/WebTestFramework/_build/latest?definitionId=6&branchName=master)
+[![Build Status](https://dev.azure.com/YauheniPo/WebTestFramework/_apis/build/status/YauheniPo.RobotFramework_GUI_Tests?branchName=develop)](https://dev.azure.com/YauheniPo/WebTestFramework/_build/latest?definitionId=6&branchName=develop)
 
 # RobotFramework_GUI_Tests
 
