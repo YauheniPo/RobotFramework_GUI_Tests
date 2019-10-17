@@ -14,8 +14,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <!--<browser>chrome</browser>-->
-        <!--<maven.test.classpath>robot.popot</maven.test.classpath>-->
+        <browser>chrome</browser>
+        <maven.test.classpath>robot.popot</maven.test.classpath>
     </properties>
 
     <dependencies>
@@ -33,7 +33,7 @@
         <dependency>
             <groupId>org.robotframework</groupId>
             <artifactId>robotframework</artifactId>
-            <version>3.1.1</version>
+            <version>3.0.4</version>
         </dependency>
         <dependency>
             <groupId>org.robotframework</groupId>
@@ -56,17 +56,6 @@
             <artifactId>log4j-core</artifactId>
             <version>2.11.1</version>
         </dependency>
-
-        <dependency>
-            <groupId>org.python</groupId>
-            <artifactId>jython-standalone</artifactId>
-            <version>2.7.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.python</groupId>
-            <artifactId>jython</artifactId>
-            <version>2.7.0</version>
-        </dependency>
     </dependencies>
 
     <build>
@@ -76,16 +65,18 @@
                     <groupId>org.robotframework</groupId>
                     <artifactId>robotframework-maven-plugin</artifactId>
                     <version>1.5.1</version>
-                    <!--<configuration>-->
-                        <!--<logLevel>TRACE:INFO</logLevel>-->
-                        <!--<variables>-->
-                            <!--<variable>browser:${browser}</variable>-->
-                            <!--&lt;!&ndash; Classpath is used in example tests to start H2 &ndash;&gt;-->
-                            <!--<variable>maven.test.classpath:${maven.test.classpath}</variable>-->
-                        <!--</variables>-->
-                    <!--</configuration>-->
+                    <configuration>
+                        <logLevel>TRACE:DEBUG</logLevel>
+                        <variables>
+                            <variable>browser:${browser}</variable>
+                            <!-- Classpath is used in example tests to start H2 -->
+                            <variable>maven.test.classpath:${maven.test.classpath}</variable>
+                        </variables>
+                    </configuration>
                     <executions>
                         <execution>
+                            <id>test</id>
+                            <phase>integration-test</phase>
                             <goals>
                                 <goal>run</goal>
                             </goals>
