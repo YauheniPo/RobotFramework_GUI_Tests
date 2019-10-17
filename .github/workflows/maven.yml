@@ -26,6 +26,6 @@ jobs:
     - name: Robot tests RUN
       run: mvn clean compile robotframework:run --file pom.xml
     - uses: actions/upload-artifact@v1
-        with:
-          name: refined-github
-          path: distribution
+      with:
+        name: refined-github
+        path: distribution
