@@ -8,11 +8,17 @@ jobs:
     name: Test on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
+      max-parallel: 2
       matrix:
-        os: [ubuntu-latest, windows-latest, macOS-latest]
+        python-version: [2.7, 3.7]
+        os: [ubuntu-latest, windows-latest]
 
     steps:
     - uses: actions/checkout@v1
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v1
+      with:
+        python-version: ${{ matrix.python-version }}
     - name: Use ${{ matrix.os }} for JAVA 1.8
       uses: actions/setup-java@v1
       with:
