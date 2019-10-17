@@ -31,7 +31,7 @@ jobs:
         path: target
     - uses: actions/download-artifact@master
       with:
-        name: my-artifact
+        name: artifacts
         path: artifacts
     
     - run: cat artifacts
