@@ -14,8 +14,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <browser>chrome</browser>
-        <maven.test.classpath>robot.popot</maven.test.classpath>
+        <browser>chromeheadless</browser>
+        <!--<maven.test.classpath>robot.popot</maven.test.classpath>-->
     </properties>
 
     <dependencies>
@@ -81,7 +81,7 @@
                         <variables>
                             <variable>browser:${browser}</variable>
                             <!-- Classpath is used in example tests to start H2 -->
-                            <variable>maven.test.classpath:${maven.test.classpath}</variable>
+                            <!--<variable>maven.test.classpath:${maven.test.classpath}</variable>-->
                         </variables>
                     </configuration>
                     <executions>
