@@ -5,13 +5,13 @@ on: [push, pull_request]
 jobs:
   test:
 
-    name: Test on ${{ matrix.os }}
+    name: Test on ${{ matrix.os }} with ${{ matrix.python-version }}
     runs-on: ${{ matrix.os }}
     strategy:
       max-parallel: 2
       matrix:
         python-version: [2.7, 3.7]
-        os: [ubuntu-latest, windows-latest, macOS-latest]
+        os: [ubuntu-latest, windows-latest]
 
     steps:
     - uses: actions/checkout@v1

@@ -1,5 +1,6 @@
 [![Build Status](https://dev.azure.com/YauheniPo/WebTestFramework/_apis/build/status/YauheniPo.RobotFramework_GUI_Tests?branchName=develop)](https://dev.azure.com/YauheniPo/WebTestFramework/_build/latest?definitionId=6&branchName=develop)
 
+<img src="https://github.com/YauheniPo/RobotFramework_GUI_Tests/workflows/Java%20CI%20-%20Test/badge.svg" />
 # RobotFramework_GUI_Tests
 
 mvn clean compile robotframework:run
