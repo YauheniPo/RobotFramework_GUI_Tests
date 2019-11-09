@@ -15,7 +15,6 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <browser>chromeheadless</browser>
-        <!--<maven.test.classpath>robot.popot</maven.test.classpath>-->
     </properties>
 
     <dependencies>
@@ -23,13 +22,7 @@
             <groupId>com.github.hi-fi</groupId>
             <artifactId>robotframework-seleniumlibrary</artifactId>
             <version>3.141.59.265</version>
-            <!--<scope>test</scope>-->
         </dependency>
-        <!--<dependency>-->
-            <!--<groupId>com.github.markusbernhardt</groupId>-->
-            <!--<artifactId>robotframework-selenium2library-java</artifactId>-->
-            <!--<version>1.4.0.8</version>-->
-        <!--</dependency>-->
         <dependency>
             <groupId>org.robotframework</groupId>
             <artifactId>robotframework</artifactId>
