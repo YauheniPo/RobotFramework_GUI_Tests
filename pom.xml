@@ -21,7 +21,7 @@
         <dependency>
             <groupId>com.github.hi-fi</groupId>
             <artifactId>robotframework-seleniumlibrary</artifactId>
-            <version>3.141.59.265</version>
+            <version>3.141.59.26535</version>
         </dependency>
         <dependency>
             <groupId>org.robotframework</groupId>

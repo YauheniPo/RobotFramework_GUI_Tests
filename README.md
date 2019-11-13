@@ -3,6 +3,21 @@
 <img src="https://github.com/YauheniPo/RobotFramework_GUI_Tests/workflows/Java%20CI%20-%20Test/badge.svg" />
 # RobotFramework_GUI_Tests
 
+RobotFramework
+Robot Framework is a generic test automation framework for acceptance testing and acceptance test-driven development (ATDD). It has easy-to-use tabular test data syntax and utilizes the keyword-driven testing approach. Its testing capabilities can be extended by test libraries implemented either with Python or Java, and users can create new keywords from existing ones using the same syntax that is used for creating test cases.
+
+-Enables easy-to-use tabular syntax for creating test cases in a uniform way.
+-Allows using keyword-driven, data-driven and behavior-driven (BDD) approaches.
+-Provides ability to create reusable higher-level keywords from the existing keywords.
+-Provides easy-to-read reports and logs in HTML format.
+-Is platform and application independent.
+-The modular architecture supports creating tests even for applications with several diverse interfaces.
+-Provides a simple library API for creating customized test libraries.
+-Provides a command line interface and XML based outputs for integration into existing build infrastructure (continuous integration systems).
+-Remote library interface enables distributed testing and implementing test libraries in any programming language.
+-Provides tagging to categorize and select test cases to be executed.
+-Has built-in support for variables, practical particularly for testing in different environments.
+
 mvn clean compile robotframework:run
 mvn clean compile robotframework:run -Dincludes=tagg
 mvn clean compile robotframework:run -Dincludes=MainPage,Sorter
