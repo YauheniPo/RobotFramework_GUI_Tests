@@ -37,7 +37,7 @@
     watchco_brand_page.Select products Limit          limit=${filter_count}
     ${actual_count} =                                 watchco_brand_page.Get Product Count
     Should Be True                                    condition=${filter_count} > ${actual_count}
-    ...                                               msg=Filter count: ${count}; Actual count: ${actual_count}
+    ...                                               msg=Filter count: ${filter_count}; Actual count: ${actual_count}
 
  Check Add to Cart Button is exist
     [tags]                                            Brand     Smoke
