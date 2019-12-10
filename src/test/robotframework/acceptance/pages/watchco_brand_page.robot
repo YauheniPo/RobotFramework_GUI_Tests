@@ -4,7 +4,7 @@
 
  Resource               header.robot
 
- Library                org.robotframework.javalib.library.AnnotationLibrary        popot/robot/**.class
+# Library                org.robotframework.javalib.library.AnnotationLibrary        popot/robot/**.class
 
 
 *** Variables ***

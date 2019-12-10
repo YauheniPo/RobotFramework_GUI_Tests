@@ -32,12 +32,12 @@
     [tags]                                            Brand     Smoke
     [Documentation]                                   Checking Brand Products Show Limiter
 
-    ${count} =                                        Set Variable                              12
+    ${filter_count}=                                  Set Variable                              12
     watchco_main_page.Click to Main Menu Bar Item     ${loc_menu_bar_men}                       ${menu_bar_mens_casio}
-    watchco_brand_page.Select products Limit          limit=${count}
+    watchco_brand_page.Select products Limit          limit=${filter_count}
     ${actual_count} =                                 watchco_brand_page.Get Product Count
-    Should Be Equal as Numbers                        first=${count}                            second=${actual_count}
-    ...                                               msg=Expected Result: ${count}; Actual Result: ${actual_count}
+    Should Be True                                    condition=${filter_count} > ${actual_count}
+    ...                                               msg=Filter count: ${count}; Actual count: ${actual_count}
 
  Check Add to Cart Button is exist
     [tags]                                            Brand     Smoke
