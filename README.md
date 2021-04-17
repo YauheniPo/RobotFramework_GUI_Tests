@@ -34,3 +34,8 @@ http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html
 https://github.com/MarkusBernhardt/robotframework-selenium2library-java#readme
 http://central.maven.org/maven2/com/github/hi-fi/robotframework-seleniumlibrary/3.141.59.2/robotframework-seleniumlibrary-3.141.59.2.html
 https://github.com/Hi-Fi/robotframework-seleniumlibrary-java
+
+## Stargazers over time
+
+[![Stargazers over time](https://starchart.cc/YauheniPo/RobotFramework_GUI_Tests.svg)](https://starchart.cc/YauheniPo/RobotFramework_GUI_Tests)
+      
